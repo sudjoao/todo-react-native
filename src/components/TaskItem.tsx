@@ -27,11 +27,13 @@ export function TaskItem({ index, task, toggleTaskDone, removeTask, editTask }: 
     }
 
     function handleCancelEditing() {
+        setNewTaskTitle(task.title);
         setIsEditing(false);
     }
 
     function handleSubmitEditing() {
         editTask(task.id, newTaskTitle);
+        setIsEditing(false);
     }
 
     useEffect(() => {
